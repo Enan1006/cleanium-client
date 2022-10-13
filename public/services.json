@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Full House cleaning",
+        "price": 1000
+    },
+    {
+        "name": "Kitchen Cleaning",
+        "price": 100
+    },
+    {
+        "name": "Toilet Cleaning",
+        "price": 100
+    },
+    {
+        "name": "Office Cleaning",
+        "price": 1000
+    },
+    {
+        "name": "Window Cleaning",
+        "price": 100
+    },
+    {
+        "name": "Carpet Cleaning",
+        "price": 100
+    }
+]
