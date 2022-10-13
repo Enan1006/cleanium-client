@@ -1,12 +1,8 @@
 import React from 'react';
 
-const Services = () => {
+const AddService = () => {
     return (
         <div>
-            <h2>Services</h2>
-            <h2>Services</h2>
-            <h2>Services</h2>
-            <h2>Services</h2>
             <h2>Services</h2>
             <h2>Services</h2>
             <h2>Services</h2>
@@ -19,4 +15,4 @@ const Services = () => {
     );
 };
 
-export default Services;
+export default AddService;
