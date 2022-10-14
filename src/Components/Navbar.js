@@ -1,22 +1,35 @@
 import React, { useState } from 'react';
+import { signOut } from 'firebase/auth';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { NavLink, useLocation } from 'react-router-dom';
+import auth from '../firebase.init';
 import useAdmin from '../hooks/useAdmin';
 import logoImg from '../Images/logo/cleanium.png';
 
 const Navbar = ({ children }) => {
+    const [user] = useAuthState(auth);
     const { pathname } = useLocation();
     const [dark, setDark] = useState(false);
     const [admin] = useAdmin();
+    const logout = () => {
+        signOut(auth);
+    }
     const menu = <>
         <li><NavLink className='rounded-lg text-white' to='/'>Home</NavLink></li>
         <li><NavLink className='rounded-lg text-white' to='/about'>About</NavLink></li>
         <li><NavLink className='rounded-lg text-white' to='/services'>Services</NavLink></li>
+        <li><NavLink className='rounded-lg text-white' to='/my-appointments'>My Appointment</NavLink></li>
         {
             admin && <li><NavLink className='rounded-lg text-white' to='/dashboard'>Dashboard</NavLink></li>
         }
         <li><NavLink className='rounded-lg text-white' to='/contact'>Contact</NavLink></li>
-        <li><NavLink className='rounded-lg text-white' to='/login'>Login</NavLink></li>
-        <li><NavLink className='rounded-lg text-white' to='/signup'>Signup</NavLink></li>
+        {user ?
+            <li><button onClick={logout} className='btn border-0 hover:bg-primary bg-transparent text-white'>Logout</button></li>
+            :
+            <div className='md:flex'>
+                <li><NavLink className='rounded-lg text-white' to='/login'>Login</NavLink></li>
+                <li><NavLink className='rounded-lg text-white' to='/signup'>Signup</NavLink></li>
+            </div>}
         <label className="swap swap-rotate">
 
             {/* <!-- this hidden checkbox controls the state --> */}
@@ -30,6 +43,8 @@ const Navbar = ({ children }) => {
 
         </label>
     </>
+
+
     return (
         <div className="drawer  drawer-end" data-theme={dark ? "dark" : "light"}>
             <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
@@ -39,7 +54,7 @@ const Navbar = ({ children }) => {
                     {pathname.includes("dashboard") && <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h7" /></svg>
                     </label>}
                     <div className="flex-1 px-2 mx-2">
-                        <img src={logoImg} alt="" srcset="" />
+                        <img src={logoImg} alt="" srcSet="" />
                     </div>
                     <div className="flex-none hidden lg:block">
                         <ul className="menu menu-horizontal">

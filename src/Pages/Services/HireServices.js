@@ -20,7 +20,7 @@ const HireServices = ({ date, setDate }) => {
                     />
                 </div>
                 <div>
-                    <img src={serviceBanner} alt="" srcset="" />
+                    <img src={serviceBanner} alt="" srcSet="" />
                 </div>
             </div>
         </div>

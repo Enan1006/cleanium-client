@@ -1,14 +1,17 @@
 import { useQuery } from '@tanstack/react-query';
 import { format } from 'date-fns';
-import React from 'react';
+import React, { useState } from 'react';
+import Modal from './Modal';
+import SelectedService from './SelectedService';
 
 const AvailablePlot = ({ date, setDate }) => {
-    const { isLoading, error, data } = useQuery(['repoData'], () =>
-        fetch('services.json').then(res =>
+    const [serviceData, setServiceData] = useState(null);
+    const { isLoading, error, data, refetch } = useQuery(['repoData', date], () =>
+        fetch('http://localhost:5000/services').then(res =>
             res.json()
         )
     )
-    if (isLoading === true) {
+    if (isLoading) {
         return <button className="btn loading">loading</button>
     }
     if (error) {
@@ -21,18 +24,19 @@ const AvailablePlot = ({ date, setDate }) => {
             </div>
             <div className='grid md:grid-cols-1 lg:grid-cols-3 gap-5'>
                 {
-                    data.map(service => <div className="card  bg-base-100 shadow-xl mt-20">
-                        <figure><img src="https://placeimg.com/400/225/arch" alt="Shoes" /></figure>
-                        <div className="card-body">
-                            <h2 className="card-title">{service.name}</h2>
-                            <p>Service charge: ${service.price}</p>
-                            <div className="card-actions justify-end">
-                                <button className="btn btn-primary">Hire</button>
-                            </div>
-                        </div>
-                    </div>)
+                    data.map((service, index) => <SelectedService
+                        key={index}
+                        service={service}
+                        setServiceData={setServiceData}
+                    ></SelectedService>)
                 }
             </div>
+            {serviceData && <Modal
+                date={date}
+                serviceData={serviceData}
+                setServiceData={setServiceData}
+                refetch={refetch}
+            ></Modal>}
         </div>
     );
 };

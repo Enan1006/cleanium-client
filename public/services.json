@@ -1,26 +1,38 @@
 [
     {
         "name": "Full House cleaning",
-        "price": 1000
+        "image": "https://i.ibb.co/qrDD3yj/service-1.jpg",
+        "price": 1000,
+        "description": "Ex aliqua sint elit ad fugiat irure. Lorem amet consequat esse velit ad Lorem. Exercitation duis ipsum proident mollit esse ut exercitation consectetur eu. Velit occaecat aute dolor Lorem ad culpa elit veniam labore cillum mollit. Sit voluptate reprehenderit amet id. Id consectetur et veniam irure dolore."
     },
     {
         "name": "Kitchen Cleaning",
-        "price": 100
+        "image": "https://i.ibb.co/fxKt9Z9/service-2.jpg",
+        "price": 100,
+        "description": "Ullamco elit qui do do qui esse aliqua pariatur proident. Laborum cillum sit deserunt ad ea pariatur eiusmod. Anim aute culpa qui proident voluptate sit ipsum magna nisi. Dolor ut mollit est ea officia ipsum veniam occaecat do fugiat. Nisi quis velit eu cillum nostrud laborum. Incididunt amet consequat nulla ipsum pariatur culpa Lorem incididunt ad. Tempor cupidatat veniam fugiat adipisicing est occaecat enim sit."
     },
     {
         "name": "Toilet Cleaning",
-        "price": 100
+        "image": "https://i.ibb.co/KG9LjTy/service-3.jpg",
+        "price": 100,
+        "description": "Laborum eiusmod excepteur tempor fugiat Lorem sit laboris non nulla incididunt reprehenderit est. Minim ad adipisicing eiusmod eiusmod dolor dolor magna minim. Officia dolore nulla reprehenderit anim."
     },
     {
         "name": "Office Cleaning",
-        "price": 1000
+        "image": "https://i.ibb.co/qrDD3yj/service-1.jpg",
+        "price": 1000,
+        "description": "Excepteur ea eu ea aliqua exercitation. Minim sint ipsum occaecat excepteur eu in sit ea qui ad consequat esse. Sint laborum irure ut veniam tempor eiusmod esse laborum aute cillum. Adipisicing id Lorem laboris dolor est aute pariatur dolor aliquip et quis."
     },
     {
         "name": "Window Cleaning",
-        "price": 100
+        "image": "https://i.ibb.co/GpwKJMY/service-5.jpg",
+        "price": 100,
+        "description": "Nostrud velit qui laborum cillum tempor do quis culpa duis deserunt velit. Amet consequat labore qui duis elit proident laborum ad. Labore est ipsum occaecat dolore sunt amet laborum. Est nostrud aliquip sint dolore excepteur ea excepteur ad sunt do. Incididunt ex excepteur proident consequat."
     },
     {
         "name": "Carpet Cleaning",
-        "price": 100
+        "image": "https://i.ibb.co/Wvnc98f/service-6.jpg",
+        "price": 100,
+        "description": "Occaecat quis duis aute cupidatat officia proident veniam minim do. Nulla nulla ea in excepteur. Fugiat voluptate commodo mollit pariatur. Reprehenderit tempor veniam amet ullamco Lorem. Lorem magna nostrud exercitation do in sint laboris sit."
     }
 ]

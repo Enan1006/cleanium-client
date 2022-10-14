@@ -10,6 +10,10 @@ import RequireAdmin from "./Authentication/RequireAdmin";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AddService from "./Pages/Dashboard/AddService";
 import AddAdmin from "./Pages/Dashboard/AddAdmin";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import Appointments from "./Pages/Dashboard/Appointments";
+import Estimation from "./Pages/Dashboard/Estimation";
 
 
 function App() {
@@ -38,10 +42,13 @@ function App() {
             <Route path="/dashboard" element={<Dashboard />}>
               <Route index element={<AddService />}></Route>
               <Route path="/dashboard/add-admin" element={<AddAdmin />}></Route>
+              <Route path="/dashboard/appointments" element={<Appointments />}></Route>
+              <Route path="/dashboard/estimation" element={<Estimation />}></Route>
             </Route>
           </Route>
         </Routes>
       </Navbar>
+      <ToastContainer />
     </div>
   );
 }
