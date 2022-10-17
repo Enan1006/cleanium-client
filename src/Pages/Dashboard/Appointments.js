@@ -1,22 +1,39 @@
 import { useQuery } from '@tanstack/react-query';
-import React from 'react';
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import Loader from '../../Components/Loader';
 
 const Appointments = () => {
+    const navigate = useNavigate();
     const { isLoading, error, data } = useQuery(['appointment'], () =>
-        fetch('http://localhost:5000/appointment').then(res =>
-            res.json()
-        )
+        fetch('http://localhost:5000/appointment', {
+            method: "GET",
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        }).then(res => res.json())
     )
-
     if (isLoading) {
         return <Loader />;
     }
     if (error) {
         toast(`${error.message}`)
     }
-    console.log({ data })
+    // const [data, setData] = useState([]);
+    // fetch('http://localhost:5000/appointment', {
+    //     method: "GET",
+    //     headers: {
+    //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+    //     }
+    // }).then(res => {
+    //     if (res.status === 401 || 403) {
+    //         navigate('/');
+    //         toast('wrong')
+    //     }
+    //     return res.json()
+    // })
+    //     .then(result => setData(result))
     return (
         <div>
             <h2 className='text-primary text-4xl text-center font-semibold'>Appointments</h2>

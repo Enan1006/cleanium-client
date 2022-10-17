@@ -9,12 +9,13 @@ import RequireUser from "./Authentication/RequireUser";
 import RequireAdmin from "./Authentication/RequireAdmin";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import AddService from "./Pages/Dashboard/AddService";
-import AddAdmin from "./Pages/Dashboard/AddAdmin";
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Appointments from "./Pages/Dashboard/Appointments";
 import Estimation from "./Pages/Dashboard/Estimation";
-
+import Summury from "./Pages/Dashboard/Summury";
+import Users from "./Pages/Dashboard/Users";
+import ManageServices from "./Pages/Dashboard/ManageServices/ManageServices";
 
 function App() {
   useEffect(() => {
@@ -41,9 +42,11 @@ function App() {
           <Route element={<RequireAdmin />}>
             <Route path="/dashboard" element={<Dashboard />}>
               <Route index element={<AddService />}></Route>
-              <Route path="/dashboard/add-admin" element={<AddAdmin />}></Route>
+              <Route path="/dashboard/manage-services" element={<ManageServices />}></Route>
               <Route path="/dashboard/appointments" element={<Appointments />}></Route>
               <Route path="/dashboard/estimation" element={<Estimation />}></Route>
+              <Route path="/dashboard/summury" element={<Summury />}></Route>
+              <Route path="/dashboard/all-users" element={<Users />}></Route>
             </Route>
           </Route>
         </Routes>

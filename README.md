@@ -3,6 +3,10 @@ A full-stack MERN web application
 
 ## Features
 - Dark/ Light theme
+- Admin/Registered user authorization
+- Only admin can't access dashboard route
+- Hire cleaners
+- User removal from admin panel dashboard
 
 ## Technologies
 - React Query
@@ -10,3 +14,7 @@ A full-stack MERN web application
 - React Router
 - Firebase
 - AOS
+
+### Admin access
+- email(abc@defg.com)
+- password (123456)

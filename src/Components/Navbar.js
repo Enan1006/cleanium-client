@@ -5,14 +5,17 @@ import { NavLink, useLocation } from 'react-router-dom';
 import auth from '../firebase.init';
 import useAdmin from '../hooks/useAdmin';
 import logoImg from '../Images/logo/cleanium.png';
+import { toast } from 'react-toastify';
 
 const Navbar = ({ children }) => {
     const [user] = useAuthState(auth);
     const { pathname } = useLocation();
     const [dark, setDark] = useState(false);
-    const [admin] = useAdmin();
+    const [admin] = useAdmin(user);
     const logout = () => {
         signOut(auth);
+        localStorage.removeItem('accessToken');
+        toast.success('Signout successfully')
     }
     const menu = <>
         <li><NavLink className='rounded-lg text-white' to='/'>Home</NavLink></li>

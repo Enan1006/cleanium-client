@@ -7,7 +7,12 @@ import auth from '../../firebase.init';
 const MyAppointments = () => {
     const [user, loading] = useAuthState(auth);
     const { isLoading, data } = useQuery(['my-appointment'], () =>
-        fetch(`http://localhost:5000/my-appointment?email=${user?.email}`).then(res =>
+        fetch(`http://localhost:5000/my-appointment?email=${user?.email}`, {
+            method: "GET",
+            headers: {
+                'authorization': `Bearer ${localStorage.getItem('accessToken')}`
+            }
+        }).then(res =>
             res.json()
         )
     )
@@ -35,7 +40,7 @@ const MyAppointments = () => {
                         {/* <!-- row  --> */}
 
                         {
-                            data.map((sd, index) => <tr>
+                            data?.map((sd, index) => <tr>
                                 <th>{index + 1}</th>
                                 <td>{sd.name}</td>
                                 <td>{sd.email}</td>

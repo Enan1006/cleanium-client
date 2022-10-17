@@ -28,7 +28,7 @@ const Hero = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                // console.log(data);
                 toast('You will soon get notified')
             })
     }
