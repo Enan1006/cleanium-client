@@ -4,7 +4,7 @@ import { toast } from 'react-toastify';
 import Loader from '../../Components/Loader';
 
 const DeleteUser = ({ deleteingUser, setDeleteingUser, refetch }) => {
-    const { _id, email } = deleteingUser;
+    const { email } = deleteingUser;
     const handleDelete = () => {
         fetch(`http://localhost:5000/users/${email}`, {
             method: "DELETE",
@@ -32,7 +32,7 @@ const DeleteUser = ({ deleteingUser, setDeleteingUser, refetch }) => {
                     <p className="py-4">You've been selected for a chance to get one year of subscription to use Wikipedia for free!</p>
                     <div className="modal-action">
                         <label onClick={handleDelete} className="btn btn-error">Delete</label>
-                        <label for="deleteUser" class="btn">Yay!</label>
+                        <label for="deleteUser" class="btn">Cancel</label>
                     </div>
                 </div>
             </div>

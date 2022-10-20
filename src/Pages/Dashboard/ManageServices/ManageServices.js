@@ -51,6 +51,7 @@ const ManageServices = () => {
                 setDeleteingService={setDeleteingService}
                 refetch={refetch}
                 deleteingService={deleteingService}
+                data={data}
             ></DeleteService>}
         </div>
     );

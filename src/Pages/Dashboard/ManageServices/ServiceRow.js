@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ServiceRow = ({ sd, index }) => {
-    const { image, name, role } = sd;
+const ServiceRow = ({ sd, index, setDeleteingService }) => {
+    const { image, name } = sd;
     return (
 
         <tr>
@@ -14,7 +14,7 @@ const ServiceRow = ({ sd, index }) => {
                 </div>
             </td>
             <td>{name}</td>
-            <td><label htmlFor="deleteUser" className="btn btn-error">Remove</label></td>
+            <td><label onClick={() => setDeleteingService(sd)} htmlFor="delete-service" className="btn btn-error">Remove</label></td>
         </tr>
 
     );
