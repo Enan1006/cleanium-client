@@ -7,7 +7,7 @@ import ServiceRow from './ServiceRow';
 const ManageServices = () => {
     const [deleteingService, setDeleteingService] = useState(null);
     const { isLoading, error, data, refetch } = useQuery(['all-services'], () =>
-        fetch('http://localhost:5000/services', {
+        fetch('https://cleanium-server-1.onrender.com/services', {
             method: "GET",
             headers: {
                 authorization: `Bearer ${localStorage.getItem('accessToken')}`

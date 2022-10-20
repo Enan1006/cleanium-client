@@ -5,7 +5,7 @@ const UserRow = ({ sd, refetch, setDeleteingUser }) => {
     const { email, role } = sd;
     console.log(sd)
     const makeAdmin = () => {
-        fetch(`http://localhost:5000/users/admin/${email}`, {
+        fetch(`https://cleanium-server-1.onrender.com/users/admin/${email}`, {
             method: "PUT",
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`

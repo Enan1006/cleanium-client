@@ -7,7 +7,7 @@ import Loader from '../../Components/Loader';
 const Appointments = () => {
     const navigate = useNavigate();
     const { isLoading, error, data } = useQuery(['appointment'], () =>
-        fetch('http://localhost:5000/appointment', {
+        fetch('https://cleanium-server-1.onrender.com/appointment', {
             method: "GET",
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -21,7 +21,7 @@ const Appointments = () => {
         toast(`${error.message}`)
     }
     // const [data, setData] = useState([]);
-    // fetch('http://localhost:5000/appointment', {
+    // fetch('https://cleanium-server-1.onrender.com/appointment', {
     //     method: "GET",
     //     headers: {
     //         'authorization': `Bearer ${localStorage.getItem('accessToken')}`

@@ -20,7 +20,7 @@ const Modal = ({ serviceData, date, setServiceData, refetch }) => {
             phone: event.target.phone.value
         }
 
-        fetch('http://localhost:5000/services', {
+        fetch('https://cleanium-server-1.onrender.com/services', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

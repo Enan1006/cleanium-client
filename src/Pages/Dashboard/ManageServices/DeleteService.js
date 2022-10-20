@@ -6,7 +6,7 @@ const DeleteService = ({ deleteingService, setDeleteingService, refetch, data })
     // console.log(data)
     console.log(deleteingService);
     const deleteService = () => {
-        fetch(`http://localhost:5000/services/${_id}`, {
+        fetch(`https://cleanium-server-1.onrender.com/services/${_id}`, {
             method: "DELETE",
             headers: {
                 'content-type': "application/json",

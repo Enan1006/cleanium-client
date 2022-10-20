@@ -4,7 +4,7 @@ import { LineChart, Line } from 'recharts';
 
 const Summury = () => {
     const { isLoading, error, data: datas, refetch } = useQuery(['repoData'], () =>
-        fetch('http://localhost:5000/services').then(res =>
+        fetch('https://cleanium-server-1.onrender.com/services').then(res =>
             res.json()
         )
     )

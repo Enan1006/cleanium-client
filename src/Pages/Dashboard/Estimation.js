@@ -10,7 +10,7 @@ const Estimation = () => {
     const [user, loading] = useAuthState(auth);
     const [estimationData, setEstimationData] = useState(null);
     const { isLoading, error, data, refetch } = useQuery(['estimation'], () =>
-        fetch('http://localhost:5000/estimation').then(res =>
+        fetch('https://cleanium-server-1.onrender.com/estimation').then(res =>
             res.json()
         )
     )

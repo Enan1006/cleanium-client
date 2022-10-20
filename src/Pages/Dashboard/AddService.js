@@ -25,7 +25,7 @@ const AddService = () => {
                         description: data.description,
                         image: img
                     }
-                    fetch(`http://localhost:5000/add-service`, {
+                    fetch(`https://cleanium-server-1.onrender.com/add-service`, {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json',

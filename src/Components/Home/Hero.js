@@ -19,7 +19,7 @@ const Hero = () => {
             bathroom: bathroom,
             frequency: frequency
         }
-        fetch('http://localhost:5000/estimation', {
+        fetch('https://cleanium-server-1.onrender.com/estimation', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

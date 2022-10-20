@@ -6,7 +6,7 @@ import Loader from '../../Components/Loader';
 const DeleteUser = ({ deleteingUser, setDeleteingUser, refetch }) => {
     const { email } = deleteingUser;
     const handleDelete = () => {
-        fetch(`http://localhost:5000/users/${email}`, {
+        fetch(`https://cleanium-server-1.onrender.com/users/${email}`, {
             method: "DELETE",
             headers: {
                 'content-type': 'application/json',

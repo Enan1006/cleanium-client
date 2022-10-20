@@ -9,7 +9,7 @@ const MyAppointments = () => {
     const [user, loading] = useAuthState(auth);
     // const [appointment, setAppointment] = useState(null)
     const { isLoading, data } = useQuery(['my-appointment'], () =>
-        fetch(`http://localhost:5000/my-appointment?email=${user?.email}`, {
+        fetch(`https://cleanium-server-1.onrender.com/my-appointment?email=${user?.email}`, {
             method: "GET",
             headers: {
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
